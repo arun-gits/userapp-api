@@ -31,7 +31,7 @@ public class UserValidator {
 
 	public void validateLoginUserMobile(User user) throws ValidationException {
 
-		StringUtil.isValidMobile(user.getData());
+//		StringUtil.isValidMobile(user.getData());
 
 		StringUtil.isValidPassword(user.getPassword());
 	}

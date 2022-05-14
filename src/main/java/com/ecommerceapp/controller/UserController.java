@@ -15,7 +15,7 @@ import com.ecommerceapp.exception.ServiceException;
 import com.ecommerceapp.exception.ValidationException;
 import com.ecommerceapp.service.UserService;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("user")
 @RestController
 public class UserController {

@@ -57,6 +57,7 @@ public class UserService {
 		} catch (DataAccessException e) {
 			throw new ServiceException ("Cannot connect to server, try again later");
 		}
+		logUser.setPassword(null);
 		return logUser;
 	}
 }

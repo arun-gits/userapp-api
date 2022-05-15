@@ -55,7 +55,7 @@ public class UserController {
 
 	@GetMapping("*")
 	public ResponseEntity<?> test(){
-		return new ResponseEntity<>("Success",HttpStatus.OK);
+		return new ResponseEntity<>("Running",HttpStatus.OK);
 	}
 
 }

@@ -14,14 +14,13 @@ import com.ecommerceapp.exception.ServiceException;
 import com.ecommerceapp.exception.ValidationException;
 import com.ecommerceapp.service.UserService;
 
-@RequestMapping("user")
 @RestController
 public class UserController {
 
 	@Autowired
 	UserService userService;
 
-	@PostMapping("register")
+	@PostMapping("user/register")
 	public ResponseEntity<?> register(@RequestBody UserDTO userDTO) {
 
 		try {
@@ -37,7 +36,7 @@ public class UserController {
 		}
 	}
 
-	@PostMapping("login")
+	@PostMapping("user/login")
 	public ResponseEntity<?> login(@RequestBody UserDTO userDTO) {
 
 		try {

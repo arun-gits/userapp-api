@@ -69,7 +69,7 @@ public class UserController {
 	public ResponseEntity<?> deleteUser(@PathVariable("id") int id){
 		try {
 		userService.deleteUser(id);
-		return new ResponseEntity<>("Success",HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}catch(ValidationException e) {
 		Message message = new Message(e.getMessage());
 		return new ResponseEntity<>(message,HttpStatus.BAD_REQUEST);

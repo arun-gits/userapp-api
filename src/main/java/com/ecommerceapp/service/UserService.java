@@ -69,7 +69,7 @@ public class UserService {
 	}
 	
 	public void deleteUser(int id) throws ValidationException{
-		userRepository.findById(id).orElseThrow(()->new ValidationException("Invalid user id"));
-		userRepository.deleteById(id);
+		User user = userRepository.findById(id).orElseThrow(()->new ValidationException("Invalid user id"));
+		userRepository.delete(user);
 	}
 }

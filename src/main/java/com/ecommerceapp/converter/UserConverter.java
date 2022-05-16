@@ -1,5 +1,8 @@
 package com.ecommerceapp.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.ecommerceapp.dto.UserDTO;
@@ -32,5 +35,14 @@ public class UserConverter {
 		userDTO.setRole(user.getRole());
 		userDTO.setStatus(user.getStatus());
 		return userDTO;
+	}
+	
+	public List<UserDTO> toDTOList (List<User> users){
+		List<UserDTO> list = new ArrayList<>();
+		for(User u : users ) {
+			UserDTO userDTO = toDTO(u);
+			list.add(userDTO);
+		}
+		return list;
 	}
 }

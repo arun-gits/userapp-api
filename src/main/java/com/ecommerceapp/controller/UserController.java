@@ -57,5 +57,10 @@ public class UserController {
 	public ResponseEntity<?> test(){
 		return new ResponseEntity<>("Running",HttpStatus.OK);
 	}
-
+	
+	@GetMapping("listusers")
+	public ResponseEntity<?> listUsers(){
+		return new ResponseEntity<>(userService.listUsers(),HttpStatus.OK);
+	}
+	
 }

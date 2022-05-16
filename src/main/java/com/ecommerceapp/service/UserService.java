@@ -1,5 +1,6 @@
 package com.ecommerceapp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,4 +61,11 @@ public class UserService {
 		logUser.setPassword(null);
 		return logUser;
 	}
+	
+	public List<UserDTO> listUsers(){
+		List<User> listOfUsers = userRepository.findAll();
+		List<UserDTO> listOfUsersDTO = userConverter.toDTOList(listOfUsers);
+		return listOfUsersDTO;
+	}
+	
 }

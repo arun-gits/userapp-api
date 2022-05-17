@@ -75,4 +75,11 @@ public class UserService {
 
 		userRepository.delete(user);
 	}
+	
+	public void makeAsAdmin(int id) throws ValidationException{
+		User user = userRepository.findById(id)
+				.orElseThrow(()->new ValidationException("Invalid user id"));
+		user.setRole("admin");
+		userRepository.save(user);
+	}
 }
